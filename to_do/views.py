@@ -3,7 +3,7 @@ from django.urls import reverse_lazy
 from django.views import generic
 
 from to_do.models import Task, Tag
-from to_do.forms import TagCreateForm
+from to_do.forms import TagUpdateForm, TaskUpdateForm
 
 
 def index(request):
@@ -28,4 +28,10 @@ class TagUpdateView(generic.UpdateView):
     model = Tag
     form_class = TagUpdateForm
     template_name = "to_do/tag_update.html"
+    success_url = reverse_lazy("to_do:tag_list")
+
+
+class TagDeleteView(generic.DeleteView):
+    model = Tag
+    template_name = "to_do/tag_confirm_delete.html"
     success_url = reverse_lazy("to_do:tag_list")
