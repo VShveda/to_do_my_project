@@ -6,3 +6,12 @@ class TagUpdateForm(forms.ModelForm):
     class Meta:
         model = Tag
         fields = ["name"]
+
+
+class TaskUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = ["content", "deadline", "complited", "tags"]
+        widgets = {
+            "deadline": forms.DateInput(attrs={"type": "date"}),
+        }
