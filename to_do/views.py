@@ -14,20 +14,19 @@ def index(request):
 class TagListView(generic.ListView):
     model = Task
     template_name = "to_do/tag_list.html"
-    context_object_name = "tegs"
 
 
 class TagCreateView(generic.CreateView):
     model = Tag
     form_class = TagForm
-    template_name = "to_do/tag_create.html"
+    template_name = "to_do/tag_form.html"
     success_url = reverse_lazy("to_do:tag_list")
 
 
 class TagUpdateView(generic.UpdateView):
     model = Tag
     form_class = TagForm
-    template_name = "to_do/tag_update.html"
+    template_name = "to_do/tag_form.html"
     success_url = reverse_lazy("to_do:tag_list")
 
 
@@ -40,5 +39,18 @@ class TagDeleteView(generic.DeleteView):
 class TaskCreateView(generic.CreateView):
     model = Task
     form_class = TaskForm
-    template_name = "to_do/task_create.html"
+    template_name = "to_do/task_form.html"
+    success_url = reverse_lazy("to_do:index")
+
+
+class TaskUpdateView(generic.UpdateView):
+    model = Task
+    form_class = TaskForm
+    template_name = "to_do/task_form.html"
+    success_url = reverse_lazy("to_do:index")
+
+
+class TaskDeleteView(generic.DeleteView):
+    model = Task
+    template_name = "to_do/task_confirm_delete.html"
     success_url = reverse_lazy("to_do:index")
