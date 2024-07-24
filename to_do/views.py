@@ -21,44 +21,44 @@ class TagCreateView(generic.CreateView):
     model = Tag
     form_class = TagForm
     template_name = "to_do/tag_form.html"
-    success_url = reverse_lazy("tag_list")
+    success_url = reverse_lazy("to_do:tag_list")
 
 
 class TagUpdateView(generic.UpdateView):
     model = Tag
     form_class = TagForm
     template_name = "to_do/tag_form.html"
-    success_url = reverse_lazy("tag_list")
+    success_url = reverse_lazy("to_do:tag_list")
 
 
 class TagDeleteView(generic.DeleteView):
     model = Tag
     template_name = "to_do/tag_confirm_delete.html"
-    success_url = reverse_lazy("tag_list")
+    success_url = reverse_lazy("to_do:tag_list")
 
 
 class TaskCreateView(generic.CreateView):
     model = Task
     form_class = TaskForm
     template_name = "to_do/task_form.html"
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("to_do:index")
 
 
 class TaskUpdateView(generic.UpdateView):
     model = Task
     form_class = TaskForm
     template_name = "to_do/task_form.html"
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("to_do:index")
 
 
 class TaskDeleteView(generic.DeleteView):
     model = Task
     template_name = "to_do/task_confirm_delete.html"
-    success_url = reverse_lazy("index")
+    success_url = reverse_lazy("to_do:index")
 
 
 def toggle_task_status(request, pk):
     task = get_object_or_404(Task, id=pk)
     task.complited = not task.complited
     task.save()
-    return redirect("index")
+    return redirect("to_do:index")
