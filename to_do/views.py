@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import generic
 
@@ -54,3 +54,10 @@ class TaskDeleteView(generic.DeleteView):
     model = Task
     template_name = "to_do/task_confirm_delete.html"
     success_url = reverse_lazy("to_do:index")
+
+
+def toggle_task_status(request, pk):
+    task = get_object_or_404(Task, id=pk)
+    task.complited = not task.complited
+    task.save()
+    return redirect('index')
