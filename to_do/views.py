@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from django.views import generic
 
-from to_do.models import Task
+from to_do.models import Task, Tag
+from to_do.forms import TagCreateForm
 
 
 def index(request):
@@ -13,3 +15,10 @@ class TagListView(generic.ListView):
     model = Task
     template_name = "to_do/tag_list.html"
     context_object_name = "tegs"
+
+
+class TagCreateView(generic.CreateView):
+    model = Tag
+    fields = ["name"]
+    template_name = "to_do/tag_create.html"
+    success_url = reverse_lazy("to_do:tag_list")
