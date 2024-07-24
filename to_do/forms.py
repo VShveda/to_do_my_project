@@ -2,13 +2,13 @@ from django import forms
 from to_do.models import Task, Tag
 
 
-class TagUpdateForm(forms.ModelForm):
+class TagForm(forms.ModelForm):
     class Meta:
         model = Tag
         fields = ["name"]
 
 
-class TaskUpdateForm(forms.ModelForm):
+class TaskForm(forms.ModelForm):
     class Meta:
         model = Task
         fields = ["content", "deadline", "complited", "tags"]
