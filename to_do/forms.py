@@ -1,5 +1,5 @@
 from django import forms
-from .models import Task, Tag
+from to_do.models import Task, Tag
 
 
 class TagUpdateForm(forms.ModelForm):
