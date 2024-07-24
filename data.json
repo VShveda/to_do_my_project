@@ -1,0 +1,140 @@
+[
+  {
+    "model": "to_do.tag",
+    "pk": 1,
+    "fields": {
+      "name": "Work"
+    }
+  },
+  {
+    "model": "to_do.tag",
+    "pk": 2,
+    "fields": {
+      "name": "Personal"
+    }
+  },
+  {
+    "model": "to_do.tag",
+    "pk": 3,
+    "fields": {
+      "name": "Urgent"
+    }
+  },
+  {
+    "model": "to_do.tag",
+    "pk": 4,
+    "fields": {
+      "name": "Home"
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 1,
+    "fields": {
+      "content": "Complete project report",
+      "datetime": "2024-07-24T10:00:00Z",
+      "deadline": "2024-07-30",
+      "complited": false,
+      "tags": [1, 3]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 2,
+    "fields": {
+      "content": "Buy groceries",
+      "datetime": "2024-07-23T12:00:00Z",
+      "deadline": "2024-07-25",
+      "complited": false,
+      "tags": [2, 4]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 3,
+    "fields": {
+      "content": "Doctor's appointment",
+      "datetime": "2024-07-20T14:00:00Z",
+      "deadline": "2024-07-22",
+      "complited": true,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 4,
+    "fields": {
+      "content": "Fix the kitchen sink",
+      "datetime": "2024-07-18T09:00:00Z",
+      "deadline": "2024-07-25",
+      "complited": false,
+      "tags": [4]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 5,
+    "fields": {
+      "content": "Plan weekend getaway",
+      "datetime": "2024-07-22T16:00:00Z",
+      "deadline": "2024-07-28",
+      "complited": false,
+      "tags": [2]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 6,
+    "fields": {
+      "content": "Submit tax documents",
+      "datetime": "2024-07-10T11:00:00Z",
+      "deadline": "2024-07-15",
+      "complited": true,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 7,
+    "fields": {
+      "content": "Organize team meeting",
+      "datetime": "2024-07-15T13:00:00Z",
+      "deadline": "2024-07-16",
+      "complited": true,
+      "tags": [1, 3]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 8,
+    "fields": {
+      "content": "Prepare dinner party",
+      "datetime": "2024-07-21T15:00:00Z",
+      "deadline": "2024-07-24",
+      "complited": false,
+      "tags": [4]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 9,
+    "fields": {
+      "content": "Update website content",
+      "datetime": "2024-07-19T08:00:00Z",
+      "deadline": "2024-07-23",
+      "complited": false,
+      "tags": [1]
+    }
+  },
+  {
+    "model": "to_do.task",
+    "pk": 10,
+    "fields": {
+      "content": "Read new book",
+      "datetime": "2024-07-25T17:00:00Z",
+      "deadline": null,
+      "complited": false,
+      "tags": [2]
+    }
+  }
+]
